@@ -19,24 +19,46 @@
       text-align: center;
     }
     .warning {
-      font-size: 24px;
+      font-size: 26px;
       animation: blink 1s step-end infinite;
     }
+    .message {
+      font-size: 18px;
+      margin-top: 20px;
+    }
     @keyframes blink {
-      from, to { opacity: 1 }
-      50% { opacity: 0 }
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1 class="warning">⚠️ iPhone Verileriniz Aktarılıyor ⚠️</h1>
-  <p>Verileriniz dışa aktarılıyor...</p>
-  <p>Lütfen bekleyin...</p>
+  <h1 class="warning">⚠️ iPhone Hacklendi! ⚠️</h1>
+  <p class="message" id="msg">Verileriniz dışa aktarılıyor...</p>
 
   <script>
+    const msg = document.getElementById('msg');
+
     setTimeout(() => {
-      alert("İPHONE U YENİDEN BAŞLAT");
-    }, 5000);
+      msg.textContent = "İletişim geçmişi indiriliyor...";
+    }, 2000);
+
+    setTimeout(() => {
+      msg.textContent = "Fotoğraflar yedekleniyor...";
+    }, 4000);
+
+    setTimeout(() => {
+      msg.textContent = "iCloud şifreleri analiz ediliyor...";
+    }, 6000);
+
+    setTimeout(() => {
+      msg.textContent = "Tüm veriler başarıyla bilgisayara kaydedildi.";
+    }, 8000);
+
+    setTimeout(() => {
+      alert("Şaka! Merak etme, hiçbir şey kaydedilmedi 😄");
+      msg.textContent = "Şaka yaptım 😁 Cihazına hiçbir şey olmadı.";
+    }, 10000);
   </script>
 </body>
 </html>
